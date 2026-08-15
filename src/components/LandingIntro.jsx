@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { 
   ArrowRight, CheckCircle2, Database, Brain, FileCheck, 
-  HelpCircle, ChevronDown, ChevronUp, AlertCircle, ShieldCheck,
-  Terminal, Search, FileSpreadsheet, ExternalLink, Play
+  HelpCircle, ChevronDown, ChevronUp, Play
 } from 'lucide-react';
 
 export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
@@ -156,88 +155,28 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
 
           </div>
 
-          {/* RIGHT COLUMN: PURE VECTOR GRAPHIC DESIGN INTERACTIVE FACT-CHECK WIDGET (NO AI IMAGES!) */}
+          {/* RIGHT COLUMN: FLAT 2D CARTOON LINE-ART DOODLE ILLUSTRATION (WIUI / NOTION EDITORIAL STYLE) */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
             
             {/* Background Tilted Terracotta Orange Block */}
-            <div className="absolute w-80 sm:w-96 h-80 sm:h-96 bg-[#E54624] rounded-3xl rotate-6 shadow-2xl transition-transform duration-300 hover:rotate-3 flex flex-col justify-end p-6">
-              <span className="text-white font-black text-3xl uppercase tracking-tighter leading-tight opacity-90">
-                NYARÈ FAKTA<br />STUDIO v3.4
+            <div className="absolute w-72 sm:w-80 h-72 sm:h-80 bg-[#E54624] rounded-3xl rotate-6 shadow-2xl transition-transform duration-300 hover:rotate-3 flex flex-col justify-end p-6">
+              <span className="text-white font-black text-2xl uppercase tracking-tighter leading-tight">
+                WHAT IS UP,<br />INDONESIA?
               </span>
             </div>
 
-            {/* MAIN GRAPHIC DESIGN FACT CHECK MOCKUP WIDGET (CODE BUILT, NO AI IMAGE) */}
+            {/* MAIN FLAT 2D CARTOON DOODLE IMAGE CARD */}
             <div
               onClick={onGoToStudio}
-              className="relative z-10 w-full max-w-sm sm:max-w-md bg-[#222222] border-2 border-white/20 rounded-3xl overflow-hidden shadow-2xl -rotate-2 hover:rotate-0 transition-all duration-300 cursor-pointer group"
+              className="relative z-10 w-72 sm:w-80 bg-white border-4 border-[#181818] rounded-3xl overflow-hidden shadow-2xl -rotate-3 hover:rotate-0 transition-all duration-300 cursor-pointer group"
             >
-              {/* Window Header Bar */}
-              <div className="bg-[#181818] px-4 py-3 border-b border-white/10 flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                </div>
-                <span className="text-[11px] font-mono font-bold text-slate-400">
-                  nyarè-fakta-studio.v3.4
-                </span>
-                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-[#E54624] text-white uppercase">
-                  LIVE
-                </span>
-              </div>
-
-              {/* Mockup Body Content */}
-              <div className="p-5 space-y-4">
-                
-                {/* Simulated Netizen Comment Box */}
-                <div className="bg-[#181818] p-3.5 rounded-2xl border border-white/10 space-y-1.5">
-                  <div className="flex items-center justify-between text-[10px] font-black uppercase text-slate-400">
-                    <span>Input Komentar Netizen</span>
-                    <span className="text-[#E54624]">Diuji</span>
-                  </div>
-                  <p className="text-xs text-white font-semibold italic">
-                    "Utang Indonesia tembus 50.000 Triliun dan inflasi 80%, negara siap bangkrut!"
-                  </p>
-                </div>
-
-                {/* Simulated Verification Result Grid */}
-                <div className="grid grid-cols-2 gap-2.5">
-                  <div className="bg-red-500/10 border border-red-500/30 p-3 rounded-xl">
-                    <span className="text-[10px] font-black uppercase text-red-400 block">Status Faktualitas</span>
-                    <span className="text-xs font-black text-red-300 block mt-0.5">HOAKS / BODONG</span>
-                  </div>
-
-                  <div className="bg-amber-500/10 border border-amber-500/30 p-3 rounded-xl">
-                    <span className="text-[10px] font-black uppercase text-amber-400 block">Fallacy Detector</span>
-                    <span className="text-xs font-black text-amber-300 block mt-0.5">Sarkasme Hiperbola</span>
-                  </div>
-                </div>
-
-                {/* Simulated Verified Primary Data Box */}
-                <div className="bg-emerald-950/40 border border-emerald-500/30 p-3.5 rounded-xl space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase text-emerald-400 flex items-center gap-1">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>Data Resmi Yang Benar</span>
-                    </span>
-                    <span className="text-[9px] font-mono text-emerald-300 bg-emerald-900/60 px-2 py-0.5 rounded">
-                      Tier-1 Kemenkeu
-                    </span>
-                  </div>
-                  <p className="text-xs font-bold text-white leading-snug">
-                    Utang resmi tercatat Rp 8.440 Triliun (Rasio PDB 38,6%) & Inflasi BPS 2,13%.
-                  </p>
-                </div>
-
-                {/* Action Footer Button Inside Widget */}
-                <div className="pt-1 flex items-center justify-between text-xs font-black text-[#E54624] group-hover:text-white transition-colors">
-                  <span className="flex items-center gap-1">
-                    <Play className="w-3.5 h-3.5 fill-[#E54624]" />
-                    <span>Klik Untuk Coba Studio Fact-Check</span>
-                  </span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-
+              <img
+                src="/assets/hero.jpg"
+                alt="Nyarè Fakta 2D Flat Cartoon Illustration"
+                className="w-full h-auto object-cover group-hover:scale-103 transition-transform duration-500"
+              />
+              <div className="bg-[#181818] p-3 text-center text-xs font-mono font-bold text-slate-300">
+                I see you've found Nyarè Fakta, welcome!
               </div>
             </div>
 
