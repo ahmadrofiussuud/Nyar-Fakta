@@ -221,44 +221,49 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {sampleCases.map((item, idx) => (
               <div 
                 key={idx}
                 onClick={onGoToStudio}
-                className="editorial-card p-7 flex flex-col justify-between space-y-5 cursor-pointer group"
+                className="editorial-card p-6 flex flex-col justify-between space-y-4 cursor-pointer group"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-[11px] font-mono-data text-slate-500 border-b border-slate-100 pb-2.5">
-                    <span className="text-[#D92D20] font-bold">{item.category}</span>
-                    <span>{item.tier}</span>
+                <div className="space-y-3">
+                  {/* Slim editorial tags */}
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono-data font-bold text-[#D92D20] uppercase tracking-wider block">
+                      {item.category}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-mono-data block">
+                      Rujukan: {item.tier}
+                    </span>
                   </div>
 
-                  <h3 className="text-xl font-serif-news font-bold text-slate-900 group-hover:text-[#D92D20] transition-colors leading-snug">
+                  <h3 className="text-lg font-serif-news font-bold text-slate-900 group-hover:text-[#D92D20] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <div className="pt-1">
-                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1 font-mono-data">
-                      Klaim Netizen:
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-mono-data">
+                      Klaim:
                     </span>
-                    <p className="text-xs text-slate-700 italic leading-relaxed pl-3 border-l-2 border-[#D92D20]">
+                    <p className="text-xs text-slate-600 italic leading-relaxed pl-2.5 border-l border-[#D92D20]">
                       "{item.claim}"
                     </p>
                   </div>
 
-                  <div className="pt-2">
-                    <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block mb-1 font-mono-data">
+                  <div className="space-y-1 pt-1">
+                    <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block font-mono-data">
                       Data Resmi Sahih:
                     </span>
-                    <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    <p className="text-xs text-slate-700 font-medium leading-relaxed">
                       {item.fact}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#D92D20]">
-                  <span>Uji klaim ini di Studio</span>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#D92D20]">
+                  <span>Uji klaim ini</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
