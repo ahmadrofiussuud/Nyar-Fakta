@@ -6,20 +6,21 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* Nyarè Fakta Distinct Cyber-Editorial Tokens */
-  --nyare-bg-dark: #0F1117;
-  --nyare-card-dark: #161922;
-  --nyare-crimson: #F04438;
-  --nyare-crimson-hover: #D92D20;
+  /* Nyarè Fakta Fresh Light Theme */
+  --nyare-bg-light: #FFFFFF;
+  --nyare-bg-subtle: #F8F9FA;
+  --nyare-card-light: #FFFFFF;
+  --nyare-text-dark: #111827;
+  --nyare-crimson: #E63946;
+  --nyare-crimson-hover: #D62839;
   --nyare-emerald: #10B981;
-  --nyare-bg-light: #F4F2EC;
-  --nyare-border-dark: rgba(255, 255, 255, 0.12);
+  --nyare-border-light: #E5E7EB;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--nyare-bg-dark);
-  color: #F4F2EC;
+  background-color: var(--nyare-bg-light);
+  color: #111827;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -44,11 +45,6 @@ body {
   50% { transform: translateY(8px); }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
-}
-
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -62,108 +58,78 @@ body {
   animation: floatDelayed 5s ease-in-out infinite 1s;
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
-}
-
 .animate-marquee {
   display: flex;
   width: 200%;
   animation: marquee 28s linear infinite;
 }
 
-/* Nyarè Fakta Frosted Glass Cards */
-.nyare-glass-card {
-  background: rgba(22, 25, 34, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.25s ease, 
-              box-shadow 0.25s ease;
+/* Nyarè Fakta Light Cards */
+.nyare-light-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nyare-glass-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(240, 68, 56, 0.5);
-  box-shadow: 0 12px 32px rgba(240, 68, 56, 0.12);
+.nyare-light-card:hover {
+  transform: translateY(-3px);
+  border-color: #E63946;
+  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.08);
 }
 
-/* Nyarè Fakta Distinct Buttons */
+/* Buttons */
 .btn-nyare-crimson {
-  background-color: #F04438;
+  background-color: #E63946;
   color: #FFFFFF;
   font-weight: 800;
   padding: 0.75rem 1.75rem;
-  border-radius: 14px;
-  border: 1px solid #F04438;
+  border-radius: 12px;
+  border: 1px solid #E63946;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(240, 68, 56, 0.25);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
 }
 
 .btn-nyare-crimson:hover {
-  background-color: #D92D20;
-  border-color: #D92D20;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(240, 68, 56, 0.35);
-}
-
-.btn-nyare-crimson:active {
-  transform: translateY(0);
+  background-color: #D62839;
+  border-color: #D62839;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230, 57, 70, 0.3);
 }
 
 .btn-nyare-outline {
-  background-color: transparent;
-  color: #F4F2EC;
+  background-color: #FFFFFF;
+  color: #111827;
   font-weight: 700;
   padding: 0.7rem 1.6rem;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  border: 1px solid #D1D5DB;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 .btn-nyare-outline:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: #F9FAFB;
+  border-color: #9CA3AF;
   transform: translateY(-1px);
-}
-
-.btn-nyare-emerald {
-  background-color: #10B981;
-  color: #FFFFFF;
-  font-weight: 800;
-  padding: 0.75rem 1.75rem;
-  border-radius: 14px;
-  border: 1px solid #10B981;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-nyare-emerald:hover {
-  background-color: #059669;
-  border-color: #059669;
-  transform: translateY(-2px);
 }
 
 /* Code Block */
 .code-block {
   font-family: var(--font-mono);
-  background: #0B0D12;
+  background: #111827;
   color: #38BDF8;
   padding: 1.25rem;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #374151;
   overflow-x: auto;
   font-size: 0.875rem;
   line-height: 1.6;

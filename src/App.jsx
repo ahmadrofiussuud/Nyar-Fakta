@@ -61,7 +61,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-[#FAFAFA] text-[#1E1E1E] selection:bg-[#ED5245] selection:text-white">
+    <div className="min-h-screen flex flex-col font-sans bg-white text-slate-900 selection:bg-[#E63946] selection:text-white">
       
       {/* Persistent Top Header Bar */}
       <Header
@@ -90,23 +90,23 @@ export default function App() {
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-12 animate-slide-down">
           
           {/* Studio Navigation Breadcrumb Header */}
-          <div className="mb-8 p-4 sm:p-6 bg-white rounded-3xl border-2 border-[#E5E5E5] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+          <div className="mb-8 p-4 sm:p-6 bg-white rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-2xs">
             <div className="flex items-center gap-3">
               <button
                 onClick={handleGoToLanding}
-                className="btn-bijak-outline text-xs sm:text-sm font-extrabold py-2 px-4 flex items-center gap-1.5 shrink-0"
+                className="btn-nyare-outline text-xs sm:text-sm font-extrabold py-2 px-4 flex items-center gap-1.5 shrink-0"
               >
-                <ArrowLeft className="w-4 h-4 text-[#ED5245]" />
+                <ArrowLeft className="w-4 h-4 text-[#E63946]" />
                 <span>Kembali ke Beranda</span>
               </button>
 
               <div className="hidden sm:block text-slate-300">|</div>
 
               <div>
-                <span className="text-[10px] font-black text-[#ED5245] uppercase tracking-widest block">
+                <span className="text-[10px] font-bold text-[#E63946] uppercase tracking-widest block">
                   NYARÈ FAKTA STUDIO • PEMBEDAH REAL-TIME
                 </span>
-                <h1 className="text-lg sm:text-xl font-black text-[#1E1E1E] tracking-tight">
+                <h1 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight font-display">
                   Uji Klaim Komentar Netizen +62
                 </h1>
               </div>
@@ -114,7 +114,7 @@ export default function App() {
 
             <button
               onClick={() => setIsPresetsOpen(true)}
-              className="btn-bijak-outline text-xs font-extrabold py-2 px-4 flex items-center gap-1.5 shrink-0"
+              className="btn-nyare-outline text-xs font-bold py-2 px-4 flex items-center gap-1.5 shrink-0"
             >
               <Sparkles className="w-4 h-4 text-amber-500" />
               <span>Pilih Contoh Komentar Viral</span>
@@ -150,7 +150,7 @@ export default function App() {
         onSelectPreset={handleSelectPreset}
       />
 
-      {/* Professional Institutional Footer */}
+      {/* Clean Light Footer */}
       <Footer
         onGoToLanding={handleGoToLanding}
         onGoToStudio={handleGoToStudio}
