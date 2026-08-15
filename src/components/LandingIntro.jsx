@@ -121,8 +121,8 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
               Bedah Komentar <span className="font-italic text-[#D92D20]">Tanpa Emosi.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
-              Menguji kebenaran klaim dan narasi netizen media sosial secara objektif terhadap database publikasi resmi BPS, Bank Indonesia, dan Kemenkeu RI.
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl font-serif-news italic font-semibold border-l-2 border-[#D92D20] pl-4">
+              “Merasa pintar karena 10.000 orang setuju di kolom komentar? Cek dulu datanya, jangan-jangan cuma korban echo chamber.”
             </p>
 
             {/* INTEGRATED SEARCH / CLAIM TEST INPUT BAR */}
@@ -227,10 +227,10 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
             <div>
               <span className="text-xs font-mono-data font-bold text-[#D92D20] uppercase tracking-wider block mb-1">
-                STUDI KASUS VIRAL
+                LAGI RAMAI (TRENDING ISSUES)
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif-news font-bold text-slate-900 tracking-tight">
-                Laporan Pembedahan Fakta
+                Isu & Narasi Medsos yang Sedang Hangat
               </h2>
             </div>
             <p className="text-xs text-slate-600 max-w-sm font-normal">
@@ -454,10 +454,10 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
           
           <div className="border-b border-slate-200 pb-6">
             <span className="text-xs font-mono-data font-bold text-emerald-700 uppercase tracking-wider block mb-1">
-              TRANSPARANSI SUMBER
+              PUSTAKA DATA (EVIDENCE BASE)
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif-news font-bold text-slate-900 tracking-tight">
-              Ekosistem Database Tier-1
+              Direktori Rujukan Resmi Sistem
             </h2>
           </div>
 
@@ -494,13 +494,68 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
                 Rujukan Harga Eceran Tertinggi (HET) Beras, Bahan Pangan Pokok, dan Pasokan Nasional.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. SECTION 5: TENTANG KITA (ABOUT US) */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+          
+          <div className="border-b border-slate-200 pb-6 text-left">
+            <span className="text-xs font-mono-data font-bold text-[#D92D20] uppercase tracking-wider block mb-1">
+              FILOSOFI & MISI KAMI
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-serif-news font-bold text-slate-900 tracking-tight">
+              Tentang Nyarè Fakta
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Big Text */}
+            <div className="md:col-span-6 space-y-4 text-left">
+              <h3 className="text-2xl font-serif-news font-bold text-slate-900">
+                “Memutus Rantai Pembodohan Publik secara Elegan.”
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                Jawab jujur: Apakah aplikasi ini bisa memberantas buzzer dan hoaks sampai 100% di Indonesia? 
+                <strong> Jelas tidak bakal bisa.</strong> Masalah manipulasi informasi, buzzer, dan echo chamber adalah masalah sistemik-politis yang sangat besar di dunia digital.
+              </p>
+              <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                Namun, Nyarè Fakta hadir sebagai <strong>senjata pertahanan digital</strong> untuk melatih pola pikir kritis Anda. Kami membantu Anda memutus rantai echo chamber dengan membedah data secara adil, dingin, dan anti-bias.
+              </p>
+            </div>
+
+            {/* Right Pillar Cards */}
+            <div className="md:col-span-6 space-y-4 text-left">
+              
+              <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 font-serif-news">
+                  1. Membangun Pola Pikir Kritis (Mindset Cultivation)
+                </h4>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Kami menggeser fokus dari sekadar menyederhanakan label "Hoaks" menjadi melatih kebiasaan kritis bertanya: <em>"Dari mana kamu tahu itu?" (How do you know?)</em>.
+                </p>
+              </div>
+
+              <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+                <h4 className="text-sm font-bold text-slate-900 font-serif-news">
+                  2. Pendekatan Kepala Dingin & Anti-Menggurui (Anti-Arrogance)
+                </h4>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Banyak cek fakta gagal karena terkesan merasa paling benar. Dengan **Evidence & Reasoning Box**, kami tidak menyerang personal pengirim, melainkan membedah logika argumennya secara objektif.
+                </p>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
       </section>
 
-      {/* 6. SECTION 5: FAQ ACCORDION */}
+      {/* 7. SECTION 6: FAQ ACCORDION */}
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-10">
           

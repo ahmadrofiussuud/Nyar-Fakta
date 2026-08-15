@@ -78,11 +78,18 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
         )}
       </div>
 
+      {/* Tagline Quote box */}
+      <div className="bg-slate-50 border-l-4 border-[#D92D20] p-4 rounded-r-lg mb-6">
+        <p className="text-sm font-serif-news italic text-slate-800 leading-relaxed font-semibold">
+          “Merasa pintar karena 10.000 orang setuju di kolom komentar? Cek dulu datanya, jangan-jangan cuma korban echo chamber.”
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit}>
         {activeTab === 'text' ? (
           <div className="space-y-2">
             <label className="block text-xs font-mono-data font-bold text-slate-700 uppercase">
-              Tempel / Ketik tulisan komentar netizen yang ingin kamu bedah:
+              Tempel atau ketik narasi komentar netizen yang ingin kamu ulik:
             </label>
             <div className="relative">
               <textarea
