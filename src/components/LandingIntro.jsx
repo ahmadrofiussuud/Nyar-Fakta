@@ -15,7 +15,8 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
       claim: "Utang Indonesia tembus 50.000 Triliun dan inflasi 80%, negara siap bangkrut!",
       fact: "Utang resmi pemerintah tercatat Rp 8.440 T (rasio PDB 38,6%) dan inflasi BPS 2,13%.",
       fallacy: "Sarkasme Hiperbola & Data Bodong",
-      tier: "Dokumen APBN KiTa Kemenkeu RI"
+      tier: "Dokumen APBN KiTa Kemenkeu RI",
+      image: "/assets/step1.jpg"
     },
     {
       category: "RISET DEMOGRAFI & IQ",
@@ -23,7 +24,8 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
       claim: "Indonesia ini IQ-nya di atas 150 semua ya pintar-pintar wkwkwk...",
       fact: "Rata-rata IQ nasional Indonesia tercatat ~78,49 (peringkat 130 dunia). IQ > 150 adalah kualifikasi genius top 0,1% dunia.",
       fallacy: "Sarkasme Ironi",
-      tier: "Ulster Institute & WPR Study"
+      tier: "Ulster Institute & WPR Study",
+      image: "/assets/step2.jpg"
     },
     {
       category: "INDIKATOR PERTUMBUHAN PDB",
@@ -31,7 +33,8 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
       claim: "Ekonomi Indonesia minus 4,5% rakyat makin susah!",
       fact: "Minus 4,5% adalah data historis Pandemi 2020. Data PDB BPS Q2 2024-2026 tumbuh stabil 5,05%.",
       fallacy: "Outdated Context (Fakta Kedaluwarsa)",
-      tier: "Berita Resmi Statistik BPS RI"
+      tier: "Berita Resmi Statistik BPS RI",
+      image: "/assets/step3.jpg"
     }
   ];
 
@@ -221,40 +224,47 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {sampleCases.map((item, idx) => (
               <div 
                 key={idx}
                 onClick={onGoToStudio}
-                className="editorial-card p-6 flex flex-col justify-between space-y-4 cursor-pointer group"
+                className="group relative bg-[#FAFAFA] border border-slate-200 rounded-2xl p-5 flex flex-col justify-between space-y-4 hover:border-[#D92D20] hover:bg-white transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md"
               >
-                <div className="space-y-3">
-                  {/* Slim editorial tags */}
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono-data font-bold text-[#D92D20] uppercase tracking-wider block">
+                <div className="space-y-3.5">
+                  {/* Asymmetrical styled image frame */}
+                  <div className="w-full h-40 overflow-hidden rounded-tl-xl rounded-br-xl rounded-tr-none rounded-bl-none border border-slate-200 relative">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-2 left-2 bg-[#D92D20] text-white text-[9px] font-mono-data font-bold px-2 py-0.5 rounded">
                       {item.category}
-                    </span>
-                    <span className="text-[10px] text-slate-400 font-mono-data block">
-                      Rujukan: {item.tier}
-                    </span>
+                    </div>
+                  </div>
+
+                  {/* Slim tags */}
+                  <div className="text-[10px] text-slate-500 font-mono-data">
+                    Sumber: {item.tier}
                   </div>
 
                   <h3 className="text-lg font-serif-news font-bold text-slate-900 group-hover:text-[#D92D20] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-mono-data">
-                      Klaim:
+                  <div className="space-y-1 bg-white p-3 rounded-lg border border-slate-100 shadow-3xs">
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block font-mono-data">
+                      Klaim Netizen:
                     </span>
-                    <p className="text-xs text-slate-600 italic leading-relaxed pl-2.5 border-l border-[#D92D20]">
+                    <p className="text-xs text-slate-600 italic leading-relaxed pl-2 border-l-2 border-[#D92D20]">
                       "{item.claim}"
                     </p>
                   </div>
 
-                  <div className="space-y-1 pt-1">
-                    <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider block font-mono-data">
-                      Data Resmi Sahih:
+                  <div className="space-y-1">
+                    <span className="text-[9px] font-bold text-emerald-700 uppercase tracking-wider block font-mono-data">
+                      Hasil Verifikasi Data Resmi:
                     </span>
                     <p className="text-xs text-slate-700 font-medium leading-relaxed">
                       {item.fact}
@@ -262,8 +272,8 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#D92D20]">
-                  <span>Uji klaim ini</span>
+                <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-[#D92D20]">
+                  <span>Pembedahan Kasus</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
