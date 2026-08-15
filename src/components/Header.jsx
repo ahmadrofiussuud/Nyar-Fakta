@@ -11,43 +11,47 @@ export default function Header({
   return (
     <div className="w-full font-sans sticky top-0 z-50">
       
-      {/* 1. TOP ANNOUNCEMENT TICKER */}
-      <div className="bg-[#E63946] text-white py-2 px-4 text-center text-xs font-semibold overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap tracking-wide uppercase flex items-center gap-6 font-mono-data">
-          <span>★ NYARÈ FAKTA — BEDAH LOGIKA & FAKTA DATA NETIZEN +62</span>
-          <span>★ TIER-1 BPS, BI & KEMENKEU VERIFIED</span>
-          <span>★ 100% INDEPENDEN & EDUTAINMENT</span>
-          <span>★ NYARÈ FAKTA — BEDAH LOGIKA & FAKTA DATA NETIZEN +62</span>
-          <span>★ TIER-1 BPS, BI & KEMENKEU VERIFIED</span>
+      {/* 1. EDITORIAL MEDIA TOP TICKER & DATE BAR */}
+      <div className="bg-[#111827] text-slate-300 py-1.5 px-4 text-[11px] font-mono-data border-b border-slate-800 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-[#D92D20]">NYARÈ FAKTA MEDIA</span>
+            <span className="text-slate-500">│</span>
+            <span className="text-slate-400">Sabtu, 15 Agustus 2026</span>
+          </div>
+
+          <div className="hidden sm:flex items-center gap-4 text-slate-400 font-medium">
+            <span>DATABASE RUJUKAN: BPS, BI, KEMENKEU RI</span>
+            <span className="text-slate-500">│</span>
+            <span className="text-emerald-400 font-bold">STATUS ENGINE: PASS STAGE 10</span>
+          </div>
         </div>
       </div>
 
-      {/* 2. MAIN HEADER BAR (CLEAN WHITE) */}
+      {/* 2. MAIN EDITORIAL HEADER BAR */}
       <header className="bg-white border-b border-slate-200 px-4 sm:px-8 py-3.5 shadow-2xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
-          {/* Logo */}
+          {/* Logo: NYARÈ FAKTA (Clean Media Logo) */}
           <div
             onClick={() => setCurrentPage('landing')}
-            className="flex items-center gap-2.5 cursor-pointer select-none group"
+            className="flex items-center gap-2 cursor-pointer select-none group"
           >
-            <div className="w-9 h-9 rounded-xl bg-[#E63946] text-white flex items-center justify-center font-bold text-sm tracking-widest shadow-xs group-hover:scale-105 transition-transform">
+            <div className="w-8 h-8 rounded bg-[#D92D20] text-white flex items-center justify-center font-bold text-xs font-mono-data">
               NF
             </div>
             <div className="flex items-baseline">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight font-display">Nyarè</span>
-              <span className="text-2xl font-extrabold text-[#E63946] tracking-tight font-display ml-1">Fakta</span>
+              <span className="text-2xl font-serif-news font-bold text-slate-900 tracking-tight">Nyarè</span>
+              <span className="text-2xl font-serif-news font-bold text-[#D92D20] tracking-tight ml-1">Fakta</span>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 text-xs font-bold text-slate-700">
+          {/* Navigation Links (Media Sections) */}
+          <nav className="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-700">
             <button
               onClick={() => setCurrentPage('landing')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                currentPage === 'landing' 
-                  ? 'bg-red-50 text-[#E63946] font-extrabold' 
-                  : 'hover:bg-slate-100 hover:text-slate-900'
+              className={`hover:text-[#D92D20] transition-colors ${
+                currentPage === 'landing' ? 'text-[#D92D20] font-black border-b-2 border-[#D92D20] pb-1' : ''
               }`}
             >
               Beranda
@@ -55,28 +59,28 @@ export default function Header({
 
             <button
               onClick={() => setCurrentPage('studio')}
-              className={`px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-                currentPage === 'studio' 
-                  ? 'bg-[#E63946] text-white font-extrabold' 
-                  : 'hover:bg-slate-100 hover:text-slate-900'
+              className={`flex items-center gap-1.5 hover:text-[#D92D20] transition-colors ${
+                currentPage === 'studio' ? 'text-[#D92D20] font-black border-b-2 border-[#D92D20] pb-1' : ''
               }`}
             >
               <span>Fact-Check Studio</span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-white text-[#E63946] font-black">UTAMA</span>
+              <span className="px-1.5 py-0.5 rounded bg-red-100 text-[#D92D20] text-[10px] font-black">
+                UTAMA
+              </span>
             </button>
 
             <button
               onClick={onOpenPresets}
-              className="px-4 py-2 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className="hover:text-[#D92D20] transition-colors"
             >
-              15 Fallacies
+              Indeks Fallacy
             </button>
 
             <button
               onClick={() => setCurrentPage('studio')}
-              className="px-4 py-2 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className="hover:text-[#D92D20] transition-colors"
             >
-              Truth Matrix
+              Truth Matrix BPS
             </button>
           </nav>
 
@@ -84,31 +88,31 @@ export default function Header({
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSoundEnabled(!soundEnabled)}
-              className={`p-2.5 rounded-lg border transition-all text-xs font-bold ${
+              className={`p-2 rounded border transition-all text-xs font-bold ${
                 soundEnabled
-                  ? 'bg-red-50 border-red-200 text-[#E63946]'
+                  ? 'bg-red-50 border-red-200 text-[#D92D20]'
                   : 'bg-slate-100 border-slate-200 text-slate-500'
               }`}
               title={soundEnabled ? 'Matikan Suara Audio' : 'Aktifkan Suara Audio'}
             >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#E63946]" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#D92D20]" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
             </button>
 
             {currentPage === 'studio' ? (
               <button
                 onClick={() => setCurrentPage('landing')}
-                className="btn-nyare-outline text-xs sm:text-sm py-2 px-4 flex items-center gap-1.5"
+                className="btn-editorial-outline text-xs py-2 px-3 flex items-center gap-1.5"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Beranda</span>
               </button>
             ) : (
               <button
                 onClick={() => setCurrentPage('studio')}
-                className="btn-nyare-crimson text-xs sm:text-sm py-2.5 px-5 flex items-center gap-1.5"
+                className="btn-editorial-red text-xs py-2 px-4 flex items-center gap-1.5"
               >
-                <span>Coba Fitur Studio</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Buka Studio Verifikasi</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             )}
           </div>
