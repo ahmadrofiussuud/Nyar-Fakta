@@ -169,8 +169,15 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
           {/* RIGHT COLUMN: NATURAL FLOATING SUBJECT CUTOUT (NO WHITE CARD BOX!) */}
           <div className="lg:col-span-5 relative flex justify-center items-center py-6">
             
-            {/* Background Organic Color Circle Blob */}
-            <div className="absolute w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#D92D20]/10 scale-105 -z-0" />
+            {/* Layered Organic Wave Circles (Wave Design Accent) */}
+            <div className="absolute inset-0 flex items-center justify-center -z-0">
+              <svg className="w-80 sm:w-[420px] h-80 sm:h-[420px] text-[#D92D20]/10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M43.7,-64.8C55.4,-55.8,62.8,-41.5,69.5,-26.4C76.2,-11.2,82.2,4.8,78.8,19C75.3,33.2,62.5,45.6,48.5,55C34.5,64.4,19.3,70.9,3.7,65.8C-11.9,60.7,-27.9,44.1,-41.9,32.2C-55.9,20.3,-67.9,13.1,-72.1,-1.1C-76.3,-15.3,-72.7,-36.5,-61,-49C49.3,-61.5,-29.4,-65.3,-11.9,-70.7C5.6,-76.1,31.9,-73.8,43.7,-64.8Z" transform="translate(100 100)" />
+              </svg>
+              {/* Concentric subtle wave outline lines */}
+              <div className="absolute w-[280px] h-[280px] rounded-full border border-[#D92D20]/10 animate-pulse-glow" />
+              <div className="absolute w-[340px] h-[340px] rounded-full border border-dashed border-[#D92D20]/5" />
+            </div>
 
             {/* Main Cutout Subject Image (NO CARD BORDER / NO CARD BOX!) */}
             <img
@@ -206,8 +213,15 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
+      {/* SVG Wave Divider Transition (Transition to Case Studies Section) */}
+      <div className="w-full overflow-hidden leading-none bg-white -mt-1">
+        <svg className="relative block w-full h-[40px] text-[#FAFAFA]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C246.52,70.36,177.34,52,87,26.7,57.05,18.33,26.9,8.75,0,0V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="currentColor"></path>
+        </svg>
+      </div>
+
       {/* 2. SECTION 1: LAPORAN PEMBEDAHAN KOMENTAR VIRAL */}
-      <section className="py-16 bg-white border-b border-slate-200">
+      <section className="py-12 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
@@ -283,8 +297,15 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
+      {/* SVG Wave Divider Transition 2 (Transition from Case Studies to Metodologi) */}
+      <div className="w-full overflow-hidden leading-none bg-[#FAFAFA] -mt-1">
+        <svg className="relative block w-full h-[40px] text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.33,87,26.7,177.34,52,246.52,70.36,321.39,56.44Z" fill="currentColor"></path>
+        </svg>
+      </div>
+
       {/* 3. SECTION 2: ALUR VERIFIKASI DATA (CLEAN EDITORIAL NUMBERS 01 02 03 - NO PILLS!) */}
-      <section className="py-16 bg-[#FAFAFA] border-b border-slate-200">
+      <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           
           <div className="border-b border-slate-200 pb-6">
