@@ -46,20 +46,28 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
               </button>
             </div>
 
-            {/* Key Features Pill Bar */}
-            <div className="pt-6 flex flex-wrap items-center gap-3 border-t border-white/10 text-xs font-bold text-slate-300">
-              <span className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/15 hover:border-[#E54624] transition-all cursor-default">
-                <Brain className="w-4 h-4 text-[#E54624]" />
-                <span>15+ Fallacies Detector</span>
-              </span>
-              <span className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/15 hover:border-amber-400 transition-all cursor-default">
-                <Database className="w-4 h-4 text-amber-400" />
-                <span>Tier-1 BPS & BI Data</span>
-              </span>
-              <span className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/15 hover:border-emerald-400 transition-all cursor-default">
-                <FileCheck className="w-4 h-4 text-emerald-400" />
-                <span>Bukti Data Sahih</span>
-              </span>
+            {/* REPLACED AI PILL BADGES WITH HUMAN EDITORIAL STAT METRICS BAR */}
+            <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 sm:gap-6 text-left">
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-[#E54624] tracking-tight">15+</div>
+                <div className="text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider mt-0.5">
+                  Fallacies Detector
+                </div>
+              </div>
+              
+              <div className="border-l border-white/15 pl-4 sm:pl-6">
+                <div className="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight">Tier-1</div>
+                <div className="text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider mt-0.5">
+                  BPS & BI Verified
+                </div>
+              </div>
+              
+              <div className="border-l border-white/15 pl-4 sm:pl-6">
+                <div className="text-2xl sm:text-3xl font-black text-emerald-400 tracking-tight">100%</div>
+                <div className="text-[11px] sm:text-xs font-extrabold text-slate-300 uppercase tracking-wider mt-0.5">
+                  Data Sahih Pembanding
+                </div>
+              </div>
             </div>
 
           </div>
@@ -89,7 +97,7 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
               </div>
             </div>
 
-            {/* FLOATING BADGES (WIUI STYLE) */}
+            {/* FLOATING BADGES */}
             <div
               onClick={onGoToStudio}
               className="absolute -top-6 -right-2 bg-[#181818] text-white border-2 border-emerald-400 rounded-full px-4 py-2 shadow-xl flex items-center gap-2 text-xs font-black animate-float-slow hover:scale-110 transition-all cursor-pointer z-30"
