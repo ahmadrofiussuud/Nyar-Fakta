@@ -1,74 +1,72 @@
 import React, { useState } from 'react';
 import { 
   ArrowRight, CheckCircle2, Database, Brain, FileCheck, 
-  HelpCircle, ChevronDown, ChevronUp, AlertCircle, ShieldCheck, 
-  Sparkles, ExternalLink, Scale, Check
+  HelpCircle, ChevronDown, ChevronUp, AlertCircle, ShieldCheck
 } from 'lucide-react';
 
 export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  const [activeFallacyTab, setActiveFallacyTab] = useState(0);
 
   const sampleCases = [
     {
       title: "Klaim Utang 50.000 Triliun",
       claim: "Utang Indonesia tembus 50.000 Triliun dan inflasi 80%, negara siap bangkrut!",
-      fact: "Utang resmi pemerintah adalah Rp 8.440 T (rasio PDB 38,6%) dan inflasi BPS 2,13%.",
-      fallacy: "Sarkasme Hiperbola & Data Bodong",
-      tier: "Tier-1 Kemenkeu & BPS"
+      fact: "Utang resmi pemerintah tercatat Rp 8.440 T (rasio PDB 38,6%) dan inflasi BPS 2,13%.",
+      fallacy: "Sarkasme Hiperbola",
+      tier: "Laporan APBN KiTa Kemenkeu"
     },
     {
       title: "Klaim Rata-Rata IQ > 150",
       claim: "Indonesia ini IQ-nya di atas 150 semua ya pintar-pintar wkwkwk...",
-      fact: "Rata-rata IQ nasional Indonesia tercatat ~78,49 (peringkat 130 dunia). IQ > 150 adalah top 0,1% dunia.",
-      fallacy: "Sarkasme Ironi & Hiperbola",
-      tier: "Ulster Institute & WPR Study"
+      fact: "Rata-rata IQ nasional Indonesia tercatat ~78,49 (peringkat 130 dunia). IQ > 150 adalah kualifikasi genius top 0,1% dunia.",
+      fallacy: "Sarkasme Ironi",
+      tier: "Ulster Institute Study"
     },
     {
-      title: "Klaim Pertumbuhan Ekonomi Minus",
+      title: "Klaim Ekonomi Minus 4,5%",
       claim: "Ekonomi Indonesia minus 4,5% rakyat makin susah!",
-      fact: "Minus 4,5% adalah data masa Pandemi 2020. Data PDB BPS Q2 2024-2026 tumbuh stabil 5,05%.",
-      fallacy: "Outdated Context (Fakta Kedaluwarsa)",
-      tier: "Tier-1 Berita Resmi BPS"
+      fact: "Minus 4,5% adalah data historis Pandemi 2020. Data PDB BPS Q2 2024-2026 tumbuh stabil 5,05%.",
+      fallacy: "Outdated Context",
+      tier: "Berita Resmi BPS RI"
     }
   ];
 
   const fallacyCatalog = [
     {
       name: "Ad Hominem",
-      desc: "Menyerang pribadi atau fisik lawan bicara bukannya membahas isi argumen data.",
-      example: "'Alah lu anak kemarin sore tau apa soal ekonomi!'",
-      badge: "Cacat Logika Paling Sering"
+      desc: "Menyerang pribadi lawan bicara daripada menguji data.",
+      example: "'Anak kemarin sore tau apa soal ekonomi!'",
+      tag: "Serangan Pribadi"
     },
     {
-      name: "Strawman (Melintir Argumen)",
-      desc: "Memelintir argumen lawan menjadi versi ekstrem yang mudah diserang.",
+      name: "Strawman",
+      desc: "Memelintir argumen lawan jadi versi ekstrem yang mudah diserang.",
       example: "'Oh jadi lu setuju rakyat kelaparan?'",
-      badge: "Manipulasi Opini"
+      tag: "Melintir Fakta"
     },
     {
       name: "Sarkasme Hiperbola",
-      desc: "Menggunakan sindiran ekstrem yang membalikkan fakta statistik riil.",
+      desc: "Sindiran berlebihan yang membalikkan statistik asli.",
       example: "'IQ netizen sini kan 150 semua pintar banget wkwk'",
-      badge: "Sindiran Netizen"
+      tag: "Sindiran Netizen"
     },
     {
       name: "Hasty Generalization",
-      desc: "Menarik kesimpulan umum untuk seluruh negara dari 1 kasus kecil.",
-      example: "'Toko sebelah sepi, fix ekonomi Indonesia hancur total!'",
-      badge: "Generalisasi Ngawur"
+      desc: "Menyimpulkan seluruh negara dari 1 kasus kecil.",
+      example: "'Toko sebelah sepi, fix ekonomi hancur total!'",
+      tag: "Generalisasi Ngawur"
     },
     {
       name: "Cherry Picking",
-      desc: "Hanya mengambil 1 potongan data buruk dan menyembunyikan data utuh.",
-      example: "'Cuma ngeliat 1 harga bahan naik, lupa inflasi total stabil 2%'",
-      badge: "Potong Data"
+      desc: "Hanya mengambil 1 angka buruk & menyembunyikan data utuh.",
+      example: "'Nge-spam 1 harga naik, lupa inflasi stabil 2%'",
+      tag: "Potong Data"
     },
     {
       name: "Outdated Context",
-      desc: "Menggunakan data kuno (misal 2020) untuk menghakimi situasi hari ini (2026).",
-      example: "'Ekonomi kan minus 4.5%!' (padahal itu data pandemi 2020)",
-      badge: "Fakta Kedaluwarsa"
+      desc: "Pakai data kuno (2020) untuk menghakimi situasi hari ini (2026).",
+      example: "'Ekonomi minus 4.5%!' (padahal data pandemi 2020)",
+      tag: "Data Kedaluwarsa"
     }
   ];
 
@@ -94,30 +92,26 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
   return (
     <div className="w-full font-sans bg-[#181818] text-white">
       
-      {/* 1. EXACT WIUI HERO SECTION (DARK MATTE CANVAS) */}
+      {/* 1. HERO SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* LEFT COLUMN: WIUI HEADLINE, SUBTEXT & BUTTONS */}
+          {/* LEFT COLUMN */}
           <div className="lg:col-span-7 space-y-6 text-left">
             
-            {/* WIUI Badge Pill */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E54624] text-white text-xs font-black uppercase tracking-wider shadow-sm">
               <span>SUP, NETIZEN +62!</span>
             </div>
 
-            {/* WIUI Typography: Sans Bold + Serif Italic Highlight */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-white">
               Indonesian netizen claims, fact-checked in <br className="hidden sm:inline" />
               <span className="font-serif-italic font-normal text-[#E54624]">fakta & data sahih.</span>
             </h1>
 
-            {/* Subtext */}
             <p className="text-base sm:text-lg text-slate-300 font-semibold leading-relaxed max-w-xl">
               Bingung bedain mana klaim emosi vs fakta riil? Kamu datang ke tempat yang tepat. Membongkar 15+ *logical fallacy* netizen dan menguji data terhadap rilis resmi BPS & BI.
             </p>
 
-            {/* WIUI Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onGoToStudio}
@@ -161,17 +155,15 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
 
           </div>
 
-          {/* RIGHT COLUMN: STACKED WIUI TILTED CARDS WITH HERO IMAGE & BADGES */}
+          {/* RIGHT COLUMN */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
             
-            {/* Background Orange Block Card (Tilted) */}
             <div className="absolute w-72 sm:w-80 h-72 sm:h-80 bg-[#E54624] rounded-3xl rotate-6 shadow-2xl transition-transform duration-300 hover:rotate-3 flex flex-col justify-end p-6">
               <span className="text-white font-black text-2xl uppercase tracking-tighter leading-tight">
                 WHAT IS UP,<br />INDONESIA?
               </span>
             </div>
 
-            {/* Main Visual Image Card (Slightly Counter-Tilted) */}
             <div
               onClick={onGoToStudio}
               className="relative z-10 w-72 sm:w-80 bg-white border-4 border-[#181818] rounded-3xl overflow-hidden shadow-2xl -rotate-3 hover:rotate-0 transition-all duration-300 cursor-pointer group"
@@ -186,7 +178,6 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
               </div>
             </div>
 
-            {/* FLOATING BADGES */}
             <div
               onClick={onGoToStudio}
               className="absolute -top-6 -right-2 bg-[#181818] text-white border-2 border-emerald-400 rounded-full px-4 py-2 shadow-xl flex items-center gap-2 text-xs font-black animate-float-slow hover:scale-110 transition-all cursor-pointer z-30"
@@ -222,58 +213,72 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </div>
 
-      {/* NEW SECTION A: SIMULASI KASUS VIRAL MEDSOS (HALL OF FAME HOAX VS FAKTA) */}
+      {/* REDESIGNED CLEAN HUMAN CASE STUDY CARDS SECTION */}
       <section className="py-16 sm:py-24 bg-[#181818] text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="text-xs font-black uppercase tracking-widest text-[#E54624] bg-[#E54624]/10 px-3.5 py-1 rounded-full border border-[#E54624]/30 inline-block mb-2">
+              <span className="text-xs font-black uppercase tracking-wider text-[#E54624]">
                 CASE STUDY VIRAL +62
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-                Contoh Pembedahan Komentar Viral
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mt-1">
+                Contoh Pembedahan Komentar
               </h2>
             </div>
-            <p className="text-xs sm:text-sm font-bold text-slate-300 max-w-sm">
-              Lihat bagaimana Nyarè Fakta mengisolasi klaim emosi dan mencocokkannya dengan database resmi.
+            <p className="text-xs sm:text-sm font-semibold text-slate-400 max-w-sm">
+              Lihat bagaimana Nyarè Fakta menguji klaim viral terhadap rilis database resmi.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* ULTRA CLEAN EDITORIAL CASE STUDY CARDS (NO NESTED BOXES) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {sampleCases.map((item, idx) => (
               <div 
                 key={idx}
                 onClick={onGoToStudio}
-                className="bg-[#222222] border-2 border-white/10 hover:border-[#E54624] rounded-3xl p-6 flex flex-col justify-between space-y-4 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group shadow-lg"
+                className="bg-[#222222] border border-white/15 rounded-3xl p-7 flex flex-col justify-between hover:border-[#E54624] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group shadow-lg"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 border border-red-500/40">
+                <div className="space-y-4">
+                  {/* Clean Top Tags */}
+                  <div className="flex items-center justify-between text-xs font-bold border-b border-white/10 pb-3">
+                    <span className="text-[#E54624] font-black uppercase tracking-wider">
                       {item.fallacy}
                     </span>
-                    <span className="text-[10px] font-mono text-slate-400">
+                    <span className="text-slate-400 text-[11px]">
                       {item.tier}
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-black text-white group-hover:text-[#E54624] transition-colors">
+                  {/* Title */}
+                  <h3 className="text-xl font-black text-white group-hover:text-[#E54624] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <div className="bg-[#181818] p-3.5 rounded-xl border border-white/10 text-xs font-semibold text-red-200">
-                    <strong className="text-red-400 block font-bold mb-1">Klaim Netizen:</strong>
-                    "{item.claim}"
+                  {/* Klaim Text (Clean Quote Style) */}
+                  <div className="pt-1">
+                    <span className="text-[11px] font-black text-slate-400 uppercase tracking-wider block mb-1">
+                      Klaim Netizen:
+                    </span>
+                    <p className="text-xs text-slate-200 font-semibold italic leading-relaxed pl-3 border-l-2 border-[#E54624]">
+                      "{item.claim}"
+                    </p>
                   </div>
 
-                  <div className="bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/30 text-xs font-semibold text-emerald-100">
-                    <strong className="text-emerald-400 block font-bold mb-1">Data Resmi Sahih:</strong>
-                    {item.fact}
+                  {/* Fakta Text (Clean Text Block) */}
+                  <div className="pt-2">
+                    <span className="text-[11px] font-black text-emerald-400 uppercase tracking-wider block mb-1">
+                      Data Resmi Sahih:
+                    </span>
+                    <p className="text-xs text-slate-300 font-semibold leading-relaxed">
+                      {item.fact}
+                    </p>
                   </div>
                 </div>
 
-                <div className="pt-2 flex items-center justify-between text-xs font-black text-[#E54624] group-hover:text-white">
-                  <span>Coba Kasus Ini Di Studio</span>
+                {/* Bottom CTA Arrow Link */}
+                <div className="pt-6 mt-4 border-t border-white/10 flex items-center justify-between text-xs font-black text-[#E54624] group-hover:text-white">
+                  <span>Uji klaim ini di Studio</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -405,19 +410,19 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
-      {/* NEW SECTION B: KATALOG 6 LOGICAL FALLACIES POPULER MEDSOS */}
+      {/* KATALOG 6 LOGICAL FALLACIES POPULER MEDSOS (CLEAN CARDS) */}
       <section className="py-16 sm:py-24 bg-[#181818] text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-black uppercase tracking-widest text-[#E54624] bg-[#E54624]/10 px-4 py-1.5 rounded-full border border-[#E54624]/30 inline-block">
+            <span className="text-xs font-black uppercase tracking-widest text-[#E54624]">
               EDUKASI CACAT LOGIKA
             </span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-              6 Logical Fallacies Paling Sering Muncul di MedSOS +62
+              6 Logical Fallacies Medsos
             </h2>
-            <p className="text-xs sm:text-sm font-semibold text-slate-300">
-              Pelajari pola kesalahan berpikir netizen agar kamu tidak gampang terkecoh opini provokatif.
+            <p className="text-xs sm:text-sm font-semibold text-slate-400">
+              Pelajari pola kesalahan berpikir netizen agar tidak terkecoh opini provokatif.
             </p>
           </div>
 
@@ -426,12 +431,14 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
               <div 
                 key={idx}
                 onClick={onOpenPresets}
-                className="bg-[#222222] border-2 border-white/10 hover:border-[#E54624] rounded-3xl p-6 flex flex-col justify-between space-y-4 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group"
+                className="bg-[#222222] border border-white/15 rounded-3xl p-7 flex flex-col justify-between space-y-4 hover:border-[#E54624] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-black uppercase px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 inline-block">
-                    {item.badge}
-                  </span>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <span className="text-xs font-black text-[#E54624] uppercase tracking-wider">
+                      {item.tag}
+                    </span>
+                  </div>
 
                   <h3 className="text-xl font-black text-white group-hover:text-[#E54624] transition-colors">
                     {item.name}
@@ -441,12 +448,12 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
                     {item.desc}
                   </p>
 
-                  <div className="bg-[#181818] p-3 rounded-xl border border-white/10 text-xs italic font-bold text-slate-300">
-                    Contoh: {item.example}
-                  </div>
+                  <p className="text-xs italic text-slate-400 font-medium pt-1">
+                    "{item.example}"
+                  </p>
                 </div>
 
-                <div className="pt-2 text-xs font-black text-[#E54624] group-hover:text-white flex items-center justify-between">
+                <div className="pt-4 border-t border-white/10 text-xs font-black text-[#E54624] group-hover:text-white flex items-center justify-between">
                   <span>Pelajari Selengkapnya</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -457,20 +464,20 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
-      {/* NEW SECTION C: HIERARKI DATABASE VERIFIKASI TIER-1 */}
+      {/* HIERARKI DATABASE VERIFIKASI TIER-1 */}
       <section className="py-16 sm:py-24 bg-[#222222] text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="text-xs font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/30 inline-block mb-2">
+              <span className="text-xs font-black uppercase tracking-wider text-emerald-400">
                 TRANSPARANSI DATA PRIMER
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mt-1">
                 Ekosistem Database Tier-1
               </h2>
             </div>
-            <p className="text-xs sm:text-sm font-bold text-slate-300 max-w-xs">
+            <p className="text-xs sm:text-sm font-semibold text-slate-400 max-w-xs">
               Seluruh verifikasi fakta mengacu murni pada dokumen publikasi resmi instansi pemerintah.
             </p>
           </div>
@@ -522,18 +529,18 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
-      {/* NEW SECTION D: FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) */}
+      {/* FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) */}
       <section className="py-16 sm:py-24 bg-[#181818] text-white border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-12">
           
           <div className="text-center space-y-3">
-            <span className="text-xs font-black uppercase tracking-widest text-[#E54624] bg-[#E54624]/10 px-4 py-1.5 rounded-full border border-[#E54624]/30 inline-block">
+            <span className="text-xs font-black uppercase tracking-wider text-[#E54624]">
               FAQ & PERTANYAAN
             </span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm font-semibold text-slate-300">
+            <p className="text-xs sm:text-sm font-semibold text-slate-400">
               Hal-hal yang sering ditanyakan netizen tentang cara kerja dan independensi Nyarè Fakta.
             </p>
           </div>
@@ -568,7 +575,7 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
         </div>
       </section>
 
-      {/* 4. BOTTOM BIG CTA BANNER */}
+      {/* BOTTOM BIG CTA BANNER */}
       <section className="py-16 bg-[#F9F8F6] text-[#181818]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="rounded-3xl bg-[#E54624] text-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
