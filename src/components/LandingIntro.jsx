@@ -15,7 +15,7 @@ export default function LandingIntro({ onGoToStudio, onOpenPresets }) {
             <div className="lg:col-span-7 space-y-6 text-left">
               
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 text-[#ED5245] text-xs font-black border border-red-200 shadow-2xs cursor-default">
-                <span>NYARÈ📍FAKTA • ENGINE FACT-CHECK NETIZEN</span>
+                <span>NYARÈ FAKTA • ENGINE FACT-CHECK NETIZEN</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#1E1E1E] leading-[1.08] tracking-tight">

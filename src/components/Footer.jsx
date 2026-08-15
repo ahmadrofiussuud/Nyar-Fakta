@@ -15,8 +15,7 @@ export default function Footer({ onGoToLanding, onGoToStudio, onOpenPresets }) {
               className="flex items-center gap-1 cursor-pointer select-none"
             >
               <span className="text-2xl font-black text-[#1E1E1E] tracking-tight">Nyarè</span>
-              <span className="text-xl font-black text-[#ED5245] mx-0.5">📍</span>
-              <span className="text-2xl font-black text-[#ED5245] tracking-tight">Fakta</span>
+              <span className="text-2xl font-black text-[#ED5245] tracking-tight ml-1">Fakta</span>
             </div>
 
             <p className="text-xs text-slate-600 font-semibold leading-relaxed">

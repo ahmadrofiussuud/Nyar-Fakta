@@ -27,14 +27,13 @@ export default function Header({
       <header className="bg-white border-b border-[#E5E5E5] px-4 sm:px-8 py-4 shadow-2xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
-          {/* Logo: Nyarè 📍 Fakta */}
+          {/* Logo: Nyarè Fakta (Clean Text, No Pin Emoji) */}
           <div
             onClick={() => setCurrentPage('landing')}
             className="flex items-center gap-1 cursor-pointer select-none group"
           >
             <span className="text-2xl sm:text-3xl font-black text-[#1E1E1E] tracking-tight">Nyarè</span>
-            <span className="text-xl sm:text-2xl font-black text-[#ED5245] mx-0.5 group-hover:rotate-12 transition-transform">📍</span>
-            <span className="text-2xl sm:text-3xl font-black text-[#ED5245] tracking-tight">Fakta</span>
+            <span className="text-2xl sm:text-3xl font-black text-[#ED5245] tracking-tight ml-1">Fakta</span>
           </div>
 
           {/* Navigation Links */}
