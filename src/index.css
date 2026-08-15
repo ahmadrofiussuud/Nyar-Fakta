@@ -1,28 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 :root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Authentic Bijak Memilih Palette */
-  --bijak-coral: #ED5245;
-  --bijak-coral-hover: #D84236;
-  --bijak-teal: #286472;
-  --bijak-teal-hover: #1E4E5A;
-  --bijak-black: #1E1E1E;
-  --bijak-bg: #FAFAFA;
-  --bijak-card-bg: #FFFFFF;
-  --bijak-border: #E5E5E5;
+  /* WIUI Color Tokens */
+  --wiui-dark: #181818;
+  --wiui-dark-card: #222222;
+  --wiui-orange: #E54624;
+  --wiui-orange-hover: #CE3818;
+  --wiui-bg-light: #F9F8F6;
+  --wiui-border-light: #E5E5E5;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bijak-bg);
-  color: var(--bijak-black);
+  background-color: var(--wiui-bg-light);
+  color: #181818;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
 }
 
 /* Micro-Interaction Animations */
@@ -41,15 +45,9 @@ body {
   50% { transform: translateY(-6px); }
 }
 
-@keyframes pulseRing {
-  0% { box-shadow: 0 0 0 0 rgba(237, 82, 69, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(237, 82, 69, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(237, 82, 69, 0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-float-slow {
@@ -64,39 +62,37 @@ body {
   animation: floatReverse 4.5s ease-in-out infinite 0.5s;
 }
 
-.animate-pulse-ring {
-  animation: pulseRing 1.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
 }
 
-.animate-slide-down {
-  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Cards & Micro-interactions */
-.bijak-card {
+/* WIUI Style Cards */
+.wiui-card {
   background: #FFFFFF;
   border: 1.5px solid #E5E5E5;
   border-radius: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.25s ease, 
               box-shadow 0.25s ease;
 }
 
-.bijak-card:hover {
+.wiui-card:hover {
   transform: translateY(-3px);
-  border-color: #D4D4D4;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border-color: #E54624;
+  box-shadow: 0 10px 30px rgba(229, 70, 36, 0.08);
 }
 
-/* Tactile Flat Buttons */
-.btn-bijak-coral {
-  background-color: #ED5245;
+/* WIUI Flat Buttons */
+.btn-wiui-orange {
+  background-color: #E54624;
   color: #FFFFFF;
   font-weight: 800;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  border: none;
+  border: 2px solid #E54624;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -104,47 +100,67 @@ body {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-bijak-coral:hover {
-  background-color: #D84236;
+.btn-wiui-orange:hover {
+  background-color: #CE3818;
+  border-color: #CE3818;
   transform: scale(1.03) translateY(-1px);
-  box-shadow: 0 6px 18px rgba(237, 82, 69, 0.3);
+  box-shadow: 0 6px 18px rgba(229, 70, 36, 0.3);
 }
 
-.btn-bijak-coral:active {
+.btn-wiui-orange:active {
   transform: scale(0.97) translateY(0);
 }
 
-.btn-bijak-black {
-  background-color: #1E1E1E;
-  color: #FFFFFF;
-  font-weight: 800;
-  padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-bijak-black:hover {
-  background-color: #000000;
-  transform: scale(1.03) translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-.btn-bijak-black:active {
-  transform: scale(0.97) translateY(0);
-}
-
-.btn-bijak-outline {
+.btn-wiui-white {
   background-color: #FFFFFF;
-  color: #1E1E1E;
+  color: #181818;
+  font-weight: 800;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-wiui-white:hover {
+  background-color: #F0F0F0;
+  transform: scale(1.03) translateY(-1px);
+}
+
+.btn-wiui-white:active {
+  transform: scale(0.97);
+}
+
+.btn-wiui-dark {
+  background-color: #181818;
+  color: #FFFFFF;
+  font-weight: 800;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid #181818;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-wiui-dark:hover {
+  background-color: #000000;
+  border-color: #000000;
+  transform: scale(1.03) translateY(-1px);
+}
+
+.btn-wiui-dark-outline {
+  background-color: transparent;
+  color: #FFFFFF;
   font-weight: 800;
   padding: 0.7rem 1.6rem;
   border-radius: 9999px;
-  border: 1.5px solid #E5E5E5;
+  border: 2px solid #FFFFFF;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -152,31 +168,16 @@ body {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-bijak-outline:hover {
-  border-color: #1E1E1E;
-  background-color: #FAFAFA;
+.btn-wiui-dark-outline:hover {
+  background-color: #FFFFFF;
+  color: #181818;
   transform: scale(1.02);
-}
-
-.btn-bijak-outline:active {
-  transform: scale(0.98);
-}
-
-/* Red Card Flip Animation */
-@keyframes redCardFlip {
-  0% { transform: perspective(600px) rotateY(-90deg) scale(0.6); opacity: 0; }
-  60% { transform: perspective(600px) rotateY(12deg) scale(1.05); opacity: 1; }
-  100% { transform: perspective(600px) rotateY(0deg) scale(1); opacity: 1; }
-}
-
-.animate-red-card {
-  animation: redCardFlip 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* Code Block */
 .code-block {
   font-family: var(--font-mono);
-  background: #1E1E1E;
+  background: #181818;
   color: #38BDF8;
   padding: 1.25rem;
   border-radius: 16px;

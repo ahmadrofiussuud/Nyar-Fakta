@@ -40,7 +40,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
   };
 
   return (
-    <div className="bijak-card p-6 sm:p-8 mb-8 bg-white font-sans">
+    <div className="wiui-card p-6 sm:p-8 mb-8 bg-white font-sans">
       
       {/* Tabs Selector */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E5E5E5] pb-4 mb-5 gap-3">
@@ -49,7 +49,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
             onClick={() => setActiveTab('text')}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all ${
               activeTab === 'text'
-                ? 'bg-[#ED5245] text-white shadow-xs'
+                ? 'bg-[#E54624] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -61,7 +61,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
             onClick={() => setActiveTab('image')}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all ${
               activeTab === 'image'
-                ? 'bg-[#ED5245] text-white shadow-xs'
+                ? 'bg-[#E54624] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -81,7 +81,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
       <form onSubmit={handleSubmit}>
         {activeTab === 'text' ? (
           <div className="space-y-2">
-            <label className="block text-sm font-black text-[#1E1E1E]">
+            <label className="block text-sm font-black text-[#181818]">
               Tempel / Ketik tulisan komentar netizen yang ingin kamu bedah:
             </label>
             <div className="relative">
@@ -90,7 +90,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
                 value={currentInputText}
                 onChange={handleTextChange}
                 placeholder="Contoh: indonesia ini iq nya diatas 150 semua ya pintar wkwkwk..."
-                className="w-full bg-white text-slate-900 placeholder-slate-400 text-sm font-semibold p-4 rounded-2xl border-2 border-[#E5E5E5] focus:border-[#ED5245] focus:ring-2 focus:ring-red-100 focus:outline-none transition-all resize-y leading-relaxed"
+                className="w-full bg-white text-slate-900 placeholder-slate-400 text-sm font-semibold p-4 rounded-2xl border-2 border-[#E5E5E5] focus:border-[#E54624] focus:ring-2 focus:ring-red-100 focus:outline-none transition-all resize-y leading-relaxed"
               />
               <div className="absolute bottom-3 right-3 text-xs text-slate-600 font-mono font-bold bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
                 {currentInputText.length} Karakter
@@ -100,7 +100,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
         ) : (
           <div className="space-y-4">
             <div
-              className="border-2 border-dashed border-red-200 hover:border-[#ED5245] bg-red-50/30 rounded-2xl p-6 text-center transition-all cursor-pointer relative group"
+              className="border-2 border-dashed border-red-200 hover:border-[#E54624] bg-red-50/30 rounded-2xl p-6 text-center transition-all cursor-pointer relative group"
             >
               <input
                 type="file"
@@ -118,10 +118,10 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center gap-2 py-2">
-                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-red-200 flex items-center justify-center text-[#ED5245]">
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-red-200 flex items-center justify-center text-[#E54624]">
                     <UploadCloud className="w-6 h-6" />
                   </div>
-                  <p className="text-sm font-black text-[#1E1E1E]">
+                  <p className="text-sm font-black text-[#181818]">
                     Klik atau Seret Screenshot Komentar Ke Sini
                   </p>
                   <p className="text-xs font-semibold text-slate-600">
@@ -139,7 +139,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
                 rows={2}
                 value={currentInputText}
                 onChange={handleTextChange}
-                className="w-full bg-white text-slate-900 text-xs font-semibold p-3 rounded-xl border-2 border-slate-200 focus:border-[#ED5245] focus:outline-none"
+                className="w-full bg-white text-slate-900 text-xs font-semibold p-3 rounded-xl border-2 border-slate-200 focus:border-[#E54624] focus:outline-none"
               />
             </div>
 
@@ -149,7 +149,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
                 id="lowQuality"
                 checked={isLowQuality}
                 onChange={(e) => setIsLowQuality(e.target.checked)}
-                className="w-4 h-4 rounded text-[#ED5245] focus:ring-[#ED5245] cursor-pointer"
+                className="w-4 h-4 rounded text-[#E54624] focus:ring-[#E54624] cursor-pointer"
               />
               <label htmlFor="lowQuality" className="text-xs font-bold text-slate-700 cursor-pointer flex items-center gap-1">
                 <span>Simulasi Gambar Burem / Low-Res (Error Code OCR Check)</span>
@@ -158,7 +158,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
           </div>
         )}
 
-        {/* Submit Button (Clean with Lucide Play Icon, No Rocket Emoji) */}
+        {/* Submit Button (WIUI Terracotta Orange) */}
         <div className="mt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-xs font-bold text-slate-600 hidden sm:block">
             Menguji otomatis klaim data terhadap rilis BPS, BI & Ulster Institute.
@@ -167,7 +167,7 @@ export default function InputPanel({ onAnalyze, isLoading, currentInputText, set
           <button
             type="submit"
             disabled={isLoading || !currentInputText.trim()}
-            className={`btn-bijak-coral text-xs sm:text-sm font-black py-3 px-8 justify-center ${
+            className={`btn-wiui-orange text-xs sm:text-sm font-black py-3 px-8 justify-center ${
               isLoading || !currentInputText.trim() ? 'opacity-50 cursor-not-allowed' : ''
             }`}
           >
